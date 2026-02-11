@@ -193,13 +193,27 @@ const RaffleForm: React.FC<RaffleFormProps> = ({ onManualStart, onConnectMeta })
         )}
       </div>
 
+      {mode === 'INSTAGRAM' && (
+        <div className="p-4 bg-blue-500/5 border border-blue-500/20 rounded-2xl animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="flex gap-3">
+            <i className="fa-solid fa-circle-info text-blue-400 mt-1"></i>
+            <div className="space-y-1">
+              <p className="text-[11px] font-bold text-blue-200">Requisito Obrigatório:</p>
+              <p className="text-[10px] text-slate-400 leading-tight">
+                Para sortear, seu <strong>Instagram Business/Criador</strong> deve estar vinculado a uma <strong>Página do Facebook</strong>. Você fará login com o Facebook para autorizar o acesso.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <button 
         type="submit"
         className="group w-full py-6 gradient-bg text-white font-black text-xl rounded-[2rem] shadow-2xl shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-4 relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <span className="relative z-10">{mode === 'INSTAGRAM' ? 'CONECTAR INSTAGRAM' : 'GERAR RESULTADO'}</span>
-        <i className="fa-solid fa-bolt-lightning relative z-10 animate-bounce"></i>
+        <span className="relative z-10">{mode === 'INSTAGRAM' ? 'CONECTAR COM FACEBOOK' : 'GERAR RESULTADO'}</span>
+        <i className={`${mode === 'INSTAGRAM' ? 'fa-brands fa-facebook-f' : 'fa-solid fa-bolt-lightning'} relative z-10 animate-bounce`}></i>
       </button>
     </form>
   );

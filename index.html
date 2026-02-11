@@ -80,13 +80,13 @@
 <body>
     <div id="root"></div>
     
-    <!-- Ponto de entrada do aplicativo -->
     <script type="module" src="./index.tsx"></script>
 
     <script>
       window.fbAsyncInit = function() {
+        // IMPORTANTE: Substitua '2652085006084896' pelo SEU App ID do painel Meta Developers
         FB.init({
-          appId      : '2652085006084896',
+          appId      : '2652085006084896', 
           cookie     : true,
           xfbml      : true,
           version    : 'v18.0'
